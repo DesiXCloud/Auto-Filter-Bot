@@ -153,6 +153,7 @@ I can't find the <b>{}</b> in my database! 🥲
 /unban_user - to unban a users from bot
 /users - to get all users details
 /chats - to get all groups
+/add_premium - user_id time
 /invite_link - to generate invite link
 /index - to index bot accessible channels</b>"""
     
@@ -162,7 +163,6 @@ I can't find the <b>{}</b> in my database! 🥲
 /settings - to change group settings as your wish
 /set_template - to set custom imdb template
 /set_caption - to set custom bot files caption
-/set_shortlink - group admin can set custom shortlink
 /get_custom_settings - to get your group settings details
 /set_welcome - to set custom new joined users welcome message for group
 /set_tutorial - to set custom tutorial link in result page button
