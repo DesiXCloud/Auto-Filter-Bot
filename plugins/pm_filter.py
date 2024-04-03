@@ -513,8 +513,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         f_size = get_size(536870912 - await db.get_db_size())
         uptime = get_readable_time(time.time() - temp.START_TIME)
         buttons = [[
-            InlineKeyboardButton('🏄 Back
-            ', callback_data='my_about')
+            InlineKeyboardButton('🏄 Back', callback_data='my_about')
         ]]
         await query.message.edit_text(script.STATUS_TXT.format(files, users, chats, premium, u_size, f_size, uptime), reply_markup=InlineKeyboardMarkup(buttons)
         )
