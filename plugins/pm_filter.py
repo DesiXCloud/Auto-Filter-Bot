@@ -250,7 +250,7 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
         ]
             for file in files
         ]
-    if settings['shortlink'] and not await db.has_premium_access(message.from_user.id):
+    if settings['shortlink'] and not await db.has_premium_access(query.from_user.id):
         btn.insert(0,
             [InlineKeyboardButton("♻️ Send All", url=await get_shortlink(settings['url'], settings['api'], f'https://t.me/{temp.U_NAME}?start=all_{query.message.chat.id}_{key}')),
             InlineKeyboardButton("⚡ Buy Now", url=f"https://t.me/{temp.U_NAME}?start=plans")]
@@ -871,7 +871,7 @@ async def auto_filter(client, msg, spoll=False):
         ]
     
     if offset != "":
-        if settings['shortlink'] and not await db.has_premium_access(message.from_user.id):
+        if settings['shortlink'] and not await db.has_premium_access(query.from_user.id):
             btn.insert(0,
                 [InlineKeyboardButton("♻️ Send All", url=await get_shortlink(settings['url'], settings['api'], f'https://t.me/{temp.U_NAME}?start=all_{message.chat.id}_{key}')),
                 InlineKeyboardButton("⚡ Subscribe", url=f"https://t.me/{temp.U_NAME}?start=plans"),
@@ -889,7 +889,7 @@ async def auto_filter(client, msg, spoll=False):
              InlineKeyboardButton(text="ɴᴇxᴛ »", callback_data=f"next_{req}_{key}_{offset}")]
         )
     else:
-        if settings['shortlink'] and not await db.has_premium_access(message.from_user.id):
+        if settings['shortlink'] and not await db.has_premium_access(query.from_user.id):
             btn.insert(0,
                 [InlineKeyboardButton("♻️ Send All", url=await get_shortlink(settings['url'], settings['api'], f'https://t.me/{temp.U_NAME}?start=all_{message.chat.id}_{key}')),
                 InlineKeyboardButton("⚡ Buy Now", url=f"https://t.me/{temp.U_NAME}?start=plans")]
