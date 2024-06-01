@@ -268,6 +268,10 @@ async def channels_info(bot, message):
 
 @Client.on_message(filters.command('stats'))
 async def stats(bot, message):
+    try:
+        await message.react(emoji=random.choice(REACTIONS), big=True)
+    except:
+        await message.react(emoji="⚡️", big=True)
     user_id = message.from_user.id
     if user_id not in ADMINS:
         await message.delete()
@@ -447,6 +451,10 @@ async def save_welcome(client, message):
         
 @Client.on_message(filters.command('delete'))
 async def delete_file(bot, message):
+    try:
+        await message.react(emoji=random.choice(REACTIONS), big=True)
+    except:
+        await message.react(emoji="⚡️", big=True)
     user_id = message.from_user.id
     if user_id not in ADMINS:
         await message.delete()
@@ -503,6 +511,10 @@ async def set_tutorial(client, message):
 
 @Client.on_message(filters.command('telegraph'))
 async def telegraph(bot, message):
+    try:
+        await message.react(emoji=random.choice(REACTIONS), big=True)
+    except:
+        await message.react(emoji="⚡️", big=True)
     reply_to_message = message.reply_to_message
     if not reply_to_message:
         return await message.reply('Reply to any photo or video.')
@@ -534,6 +546,10 @@ async def ping(client, message):
     
 @Client.on_message(filters.command("add_premium"))
 async def give_premium_cmd_handler(client, message):
+    try:
+        await message.react(emoji=random.choice(REACTIONS), big=True)
+    except:
+        await message.react(emoji="⚡️", big=True)
     user_id = message.from_user.id
     if user_id not in ADMINS:
         await message.delete()
@@ -558,6 +574,10 @@ async def give_premium_cmd_handler(client, message):
         
 @Client.on_message(filters.command("remove_premium"))
 async def remove_premium_cmd_handler(client, message):
+    try:
+        await message.react(emoji=random.choice(REACTIONS), big=True)
+    except:
+        await message.react(emoji="⚡️", big=True)
     user_id = message.from_user.id
     if user_id not in ADMINS:
         await message.delete()
